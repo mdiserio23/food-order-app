@@ -11,6 +11,7 @@ const AvailableMeals = (props) => {
     return (
       <MealItem
         id={meal.id}
+        key={meal.id}
         description={meal.description}
         price={meal.price}
         name={meal.name}
