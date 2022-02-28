@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import CartContext, { CartProvider } from "../../store/cart-context";
+import CartContext from "../../store/cart-context";
 import Modal from "../Modal/Modal";
 import classes from "./Cart.module.css";
 
@@ -14,11 +14,11 @@ const Cart = (props) => {
     </li>
   ));
   return (
-    <CartProvider>
-      <Modal>
+    <>
+      <Modal onCloseModal={props.onCloseCart}>
         <ul className={classes["cart-items"]}>{cartItems}</ul>
       </Modal>
-    </CartProvider>
+    </>
   );
 };
 

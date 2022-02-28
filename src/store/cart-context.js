@@ -1,24 +1,12 @@
-import { createContext, useState } from "react";
+import React from "react";
 
-const DUMMY_CART_LIST = [
-  {
-    id: "1",
-    name: "Schnitzel",
-    price: 14,
-    quantity: 0,
-  },
-];
-
-const CartContext = createContext({
-  cartList: DUMMY_CART_LIST,
+const CartContext = React.createContext({
+  cartList: [],
+  totalAmount: 0,
+  showCartModal: false,
+  addItem: () => {},
+  modalHandler: () => {}
 });
 
 export default CartContext;
-
-export const CartProvider = (props) => {
-  const [cartList, setCartList] = useState([]);
-
-  return <CartContext.Provider value={{ cartList }}>{props.children}</CartContext.Provider>;
-};
-
 
