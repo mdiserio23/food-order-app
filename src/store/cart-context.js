@@ -5,6 +5,8 @@ const CartContext = React.createContext({
   totalAmount: 0,
   showCartModal: false,
   addItem: () => {},
+  addOneAmountItem: () => {},
+  removeItem: () => {},
   modalHandler: () => {}
 });
 
