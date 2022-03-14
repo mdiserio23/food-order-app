@@ -1,0 +1,11 @@
+.is-loading {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+.is-error-text {
+    text-align: center;
+    font-size: 24px;
+    color: #8a2b06;
+}
