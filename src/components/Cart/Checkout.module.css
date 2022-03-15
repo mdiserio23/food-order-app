@@ -1,6 +1,7 @@
 .form-control {
   margin: 2rem 0;
-  overflow: auto;
+  overflow-y: scroll;
+  height: 19rem;
 }
 
 .form-control label {
