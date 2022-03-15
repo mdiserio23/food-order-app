@@ -65,6 +65,10 @@ const cartReducer = (state, action) => {
     };
   }
 
+  if(action.type === 'RESET') {
+    return initialCartState;
+  }
+
   return initialCartState;
 };
 
@@ -96,6 +100,10 @@ const CartProvider = (props) => {
     dispatchCartAction({ type: "ADD_ONE", item });
   };
 
+  const resetCartListHandler = () => {
+    dispatchCartAction({ type: "RESET" });
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -108,6 +116,7 @@ const CartProvider = (props) => {
         modalHandler: showModalHandler,
         addOneAmountItem: addOneAmountItemHandler,
         removeItem: removeItemHandler,
+        resetCartList: resetCartListHandler
       }}
     >
       {props.children}

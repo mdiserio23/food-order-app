@@ -9,7 +9,8 @@ const CartContext = React.createContext({
   addItem: () => {},
   addOneAmountItem: () => {},
   removeItem: () => {},
-  modalHandler: () => {}
+  modalHandler: () => {},
+  resetCartList: () => {}
 });
 
 export default CartContext;

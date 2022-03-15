@@ -4,7 +4,7 @@ import Input from "../UI/Input";
 import classes from "./Checkout.module.css";
 
 const inputIsEmpty = (value) => value.trim() === "";
-const isNotFiveChars = (value) => value.trim().length !== 5;
+const isFiveChars = (value) => value.trim().length === 5;
 
 const Checkout = (props) => {
   const [formValidity, setFormValidity] = useState({
@@ -21,9 +21,9 @@ const Checkout = (props) => {
   const onCheckoutHandler = (event) => {
     event.preventDefault();
     const yourNameIsValid = !inputIsEmpty(yourName.current.value);
-    const streetIsValid = !inputIsEmpty(yourName.current.value);
-    const postalCodeIsValid = !isNotFiveChars(yourName.current.value);
-    const cityIsValid = !inputIsEmpty(yourName.current.value);
+    const streetIsValid = !inputIsEmpty(street.current.value);
+    const postalCodeIsValid = isFiveChars(postalCode.current.value);
+    const cityIsValid = !inputIsEmpty(city.current.value);
     const formIsValid =
       yourNameIsValid &&
       streetIsValid &&
@@ -85,7 +85,7 @@ const Checkout = (props) => {
           type: "text",
         }}
       ></Input>
-      {!formValidity.street && <p>Name is mandatory.</p>}
+      {!formValidity.street && <p>Street is mandatory.</p>}
       <Input
         classes={postalCodeClass}
         label="Postal Code"
@@ -95,7 +95,7 @@ const Checkout = (props) => {
           type: "text",
         }}
       ></Input>
-      {!formValidity.postalCode && <p>Name is mandatory.</p>}
+      {!formValidity.postalCode && <p>Postal code is mandatory.</p>}
       <Input
         classes={cityClass}
         label="City"
@@ -105,7 +105,7 @@ const Checkout = (props) => {
           type: "text",
         }}
       ></Input>
-      {!formValidity.city && <p>Name is mandatory.</p>}
+      {!formValidity.city && <p>City is mandatory.</p>}
       <div className={classes["checkout-cta"]}>
         <Button type="button" onClick={props.onCancelCheckoutForm}>
           Cancel
