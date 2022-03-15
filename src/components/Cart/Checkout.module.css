@@ -1,0 +1,55 @@
+.form-control {
+  margin: 2rem 0;
+  overflow: auto;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.control {
+  display: block;
+}
+
+.form-control input {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.checkout-cta {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.checkout-cta button {
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+}
+
+.checkout-cta .submit {
+  border: 1px solid #5a1a01;
+  background-color: #f9f9f9;
+  color: #8a2b06;
+}
+
+.checkout-cta .submit:hover,
+.checkout-cta .submit:active {
+  background-color: #7a2706;
+}
+
+.invalid label {
+  color: #ca3e51;
+}
+
+.invalid input {
+  border-color: #aa0b20;
+  background-color: #ffeff1;
+}

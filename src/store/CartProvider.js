@@ -70,6 +70,7 @@ const cartReducer = (state, action) => {
 
 const CartProvider = (props) => {
   const [showCartModal, setShowCartModal] = useState(false);
+  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
     initialCartState
@@ -77,6 +78,10 @@ const CartProvider = (props) => {
 
   const showModalHandler = (value) => {
     setShowCartModal(value);
+  };
+
+  const showCheckoutFormlHandler = (value) => {
+    setShowCheckoutForm(value);
   };
 
   const addItemHandler = (item) => {
@@ -97,6 +102,8 @@ const CartProvider = (props) => {
         cartList: cartState.cartList,
         totalAmount: cartState.totalAmount,
         showCartModal,
+        showCheckoutForm,
+        showCheckoutFormlHandler,
         addItem: addItemHandler,
         modalHandler: showModalHandler,
         addOneAmountItem: addOneAmountItemHandler,

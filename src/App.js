@@ -8,17 +8,13 @@ import MealsProvider from "./store/MealsProvider";
 function App() {
   const ctx = useContext(CartContext);
 
-  const onCloseModalHandler = () => {
-    ctx.modalHandler(false);
-  };
-
   const onOpenModalHandler = () => {
     ctx.modalHandler(true);
   };
 
   return (
     <MealsProvider>
-      {ctx.showCartModal && <Cart onCloseCart={onCloseModalHandler} />}
+      {ctx.showCartModal && <Cart />}
       <Header clickCart={onOpenModalHandler} />
       <Meals />
     </MealsProvider>
